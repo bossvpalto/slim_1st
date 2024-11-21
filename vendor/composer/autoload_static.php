@@ -13,6 +13,7 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -27,6 +28,10 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
     );
 
     public static $prefixDirsPsr4 = array (
+        'Slim\\Views\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/php-view/src',
+        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -43,6 +48,10 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/classes',
     );
 
     public static $prefixesPsr0 = array (
@@ -64,6 +73,7 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$classMap;
 
