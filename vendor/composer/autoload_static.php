@@ -18,6 +18,8 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
+            'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
@@ -36,9 +38,19 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'Psr\\Http\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-server-handler/src',
+            1 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -54,16 +66,6 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         0 => __DIR__ . '/../..' . '/classes',
     );
 
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Pimple' => 
-            array (
-                0 => __DIR__ . '/..' . '/pimple/pimple/src',
-            ),
-        ),
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -74,7 +76,6 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
             $loader->prefixLengthsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6::$classMap;
 
         }, null, ClassLoader::class);

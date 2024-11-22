@@ -7,8 +7,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require './vendor/autoload.php';
 require './src/settings.php';
-require './src/classes/Mapper.php';
-require './src/classes/TicketMapper.php';
+//require './src/classes/Mapper.php';
+//require './src/classes/TicketMapper.php';
 
 
 $app = new \Slim\App(["settings" => $config]);
@@ -38,6 +38,10 @@ $container['view'] = new \Slim\Views\PhpRenderer("../templates/");
 
 
 // Маршруты
+$app->get('/', function ($request, $response, $args) {
+    return $response->withStatus(200)->write('Hello World!');
+});
+
 $app->get('/hello/{name}', function (Request $request, Response $response) {
     $name = $request->getAttribute('name');
     $response->getBody()->write("Hello, $name");
@@ -48,7 +52,6 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 
 
 $app->get('/tickets', function (Request $request, Response $response) {
-    //$this->logger->addInfo("Ticket list");
     $mapper = new TicketMapper($this->db);
     $tickets = $mapper->getTickets();
 
